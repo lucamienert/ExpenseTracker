@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
 import GlobalContext from '../context/GlobalContext'
-import { numberWithCommas } from '../utils/format'
+import { numberWithCommas } from '../helper/numberHelper'
 
 export const IncomeExpenses = () => {
   const { transactions } = useContext(GlobalContext)
 
-  const amounts = transactions.map(transaction => transaction.amount)
+  const amounts = transactions.map((transaction: any) => transaction.amount)
 
   const income = amounts
     .filter(item => item > 0)
