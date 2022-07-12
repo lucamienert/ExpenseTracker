@@ -1,5 +1,11 @@
+import GlobalProvider from "./context/GlobalProvider"
+
 const App = () => {
-  return (<></>)
+  return (
+    <GlobalProvider>
+
+    </GlobalProvider>
+  )
 }
 
 export default App
