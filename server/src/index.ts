@@ -6,13 +6,16 @@ import helmet from 'helmet'
 import compression from 'compression'
 
 import userRouter from './routes/userRoutes'
+import corsOptions from './config/corsOptions'
+import credentials from './middleware/credentials'
 
 const app = express()
 const HTTP_PORT = 8000
 
-app.use(cors())
+app.use(cors(corsOptions))
 app.use(helmet())
 app.use(compression())
+app.use(credentials)
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
